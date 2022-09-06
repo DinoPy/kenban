@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import authUtils from '../../utils/authUtils';
 
 const AuthLayout = () => {
 	const navigate = useNavigate();
@@ -9,7 +10,13 @@ const AuthLayout = () => {
 
 	useEffect(() => {
 		const checkAugh = async () => {
-			// check auth
+			const isAuth = await authUtils.isAuthenticated();
+
+			if (!isAuth) {
+				setLoading(false);
+			} else {
+				navigate('');
+			}
 		};
 	});
 
