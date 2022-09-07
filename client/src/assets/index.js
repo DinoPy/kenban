@@ -1,9 +1,14 @@
-const assests = {
+import logoDark from './images/logo-dark.jpg';
+import appIcon from './images/app-icon.png';
+
+const assets = {
 	images: {
-		logoDark: require('./images/logo-dark.jpg'),
-		appIcon: require('./images/app-icon.png'),
+		logoDark,
+		appIcon,
 	},
 	colors: {
 		secondary: '#292929',
 	},
 };
+
+export default assets;
