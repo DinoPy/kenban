@@ -13,9 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/v1', require('./src/v1/routes')).post((req, res) => {
-	console.log(req.body);
-	res.json({ message: 'Hello World' });
-});
+app.use('/api/v1', require('./src/v1/routes'));
 
 module.exports = app;
